@@ -80,10 +80,17 @@ Git is a version control system which enables users to easily and efficiently ke
 
 ### `Git Add`
 
-**usage**  
- `git add .`  
- `git add client/src/utils`  
- **explanation**
+**usage**
+
+```git
+git add .
+```
+
+```git
+git add client/src/utils
+```
+
+**explanation**
 
 `git add` is
 
