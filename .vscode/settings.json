@@ -1,0 +1,5 @@
+{
+	"markdown.extension.tableFormatter.normalizeIndentation": true,
+	"markdown.extension.toc.githubCompatibility": true,
+	"markdown.extension.toc.levels": "1..3"
+}

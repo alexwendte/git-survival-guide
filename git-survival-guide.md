@@ -13,25 +13,25 @@
 		- [Conclusion](#conclusion)
 	- [Understanding Git](#understanding-git)
 	- [Essential Git Commands](#essential-git-commands)
-		- [`Git Add`](#git-add)
-		- [`Git Commit`](#git-commit)
-		- [`Git Status`](#git-status)
-		- [`Git Diff`](#git-diff)
-		- [`Git Log`](#git-log)
-		- [`Git Push`](#git-push)
-		- [`Git Pull`](#git-pull)
-		- [`Git Checkout`](#git-checkout)
-		- [`Git Reset`](#git-reset)
-		- [`Git Merge`](#git-merge)
-		- [`Git Branch`](#git-branch)
-		- [`Git Reflog`](#git-reflog)
+		- [Git Add](#git-add)
+		- [Git Commit](#git-commit)
+		- [Git Status](#git-status)
+		- [Git Diff](#git-diff)
+		- [Git Log](#git-log)
+		- [Git Push](#git-push)
+		- [Git Pull](#git-pull)
+		- [Git Checkout](#git-checkout)
+		- [Git Reset](#git-reset)
+		- [Git Merge](#git-merge)
+		- [Git Branch](#git-branch)
+		- [Git Reflog](#git-reflog)
 	- [Advanced Git Commands](#advanced-git-commands)
 		- [Git Rebase](#git-rebase)
-		- [File Specific "Merge"](#file-specific-%22merge%22)
+		- [File Specific "Merge"](#file-specific-merge)
 		- [Amend a Commit](#amend-a-commit)
 		- [Tags](#tags)
 	- [Utility Git Commands](#utility-git-commands)
-		- [Comparing Commits (..)]](#comparing-commits)
+		- [Comparing Commits (..)](#comparing-commits-)
 		- [Checking Out A Commit](#checking-out-a-commit)
 		- [Name Only Diff](#name-only-diff)
 		- [Remove Cached Git Files](#remove-cached-git-files)
@@ -78,43 +78,43 @@ Git is a version control system which enables users to easily and efficiently ke
 
 ## Essential Git Commands
 
-### `Git Add`
+### Git Add
 
-**usage**
+#### Usage
 
-```git
+```
 git add .
 ```
 
-```git
+```
 git add client/src/utils
 ```
 
-**explanation**
+#### Explanation
 
 `git add` is
 
-### `Git Commit`
+### Git Commit
 
-### `Git Status`
+### Git Status
 
-### `Git Diff`
+### Git Diff
 
-### `Git Log`
+### Git Log
 
-### `Git Push`
+### Git Push
 
-### `Git Pull`
+### Git Pull
 
-### `Git Checkout`
+### Git Checkout
 
-### `Git Reset`
+### Git Reset
 
-### `Git Merge`
+### Git Merge
 
-### `Git Branch`
+### Git Branch
 
-### `Git Reflog`
+### Git Reflog
 
 ## Advanced Git Commands
 
@@ -128,7 +128,7 @@ git add client/src/utils
 
 ## Utility Git Commands
 
-### Comparing Commits (..)]
+### Comparing Commits (..)
 
 ### Checking Out A Commit
 
