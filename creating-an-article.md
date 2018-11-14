@@ -32,3 +32,15 @@ Git rebase -i is a command that helps to maintain a clean git history. This comm
 ## Conclusion
 
 Missing research includes data about how effective the different git workflows are. I believe this data in itself is not tangible but looking at what major companies do could give light to what is actually effective. An interesting research project could be what similarities and differences are there in the git workflows of the top 1000 companies using git. There is not a beginner friendly resource for getting started with git and getting integrated into an office workflow, and I believe my article will help to fill that need. You can read my article [here](./understanding-git.md).
+
+## Works Cited
+
+Patel, Neil. “8 Data-Driven Tips for Using Images in Blog Posts.” HubSpot, Hubspot Inc, 31 Oct. 2014, [https://blog.hubspot.com/marketing/images-in-blog-posts-tips](https://blog.hubspot.com/marketing/images-in-blog-posts-tips)
+
+“Saving Changes.” Atlassian, Atlassian, [https://www.atlassian.com/git/tutorials/saving-changes](https://www.atlassian.com/git/tutorials/saving-changes)
+
+Abel, Ryan. “Four Steps To Maintaining a Clean Git History.” Atomic Object, B Corp, 23 Apr. 2017, [https://spin.atomicobject.com/2017/04/23/maintain-clean-git-history/](https://spin.atomicobject.com/2017/04/23/maintain-clean-git-history/).
+
+“Gitflow Worfklow.” Atlassian, Atlassian, [https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+Dowswell, Kurt. “Git Bash Aliases.” Kurt Dowswell, 07 Sep. 2017, [http://kurtdowswell.com/software-development/git-bash-aliases/](http://kurtdowswell.com/software-development/git-bash-aliases/)
