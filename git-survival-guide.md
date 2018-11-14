@@ -159,7 +159,7 @@ git diff <path(s) to directory or file(s)>
 
 <details><summary>Explanation</summary><p>
 
-`git diff` is one of the most helpful commands for ensuring the changes you made were intentional. The output of git diff can take some getting use to to understand. Basically git diff shows you is the difference between the lines that were changed.
+`git diff` is one of the most helpful commands for ensuring the changes you made were intentional. The output of git diff can take some getting use to to understand. Basically git diff shows you is the difference between the lines that were changed. You will see "+" next to lines that were added relative to HEAD and "-" next to lines that were deleted relative to HEAD.
 
 </p></details>
 
