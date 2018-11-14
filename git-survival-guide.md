@@ -102,9 +102,11 @@ git add .
 git add <path(s) to directory or file(s)>
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
 
 `git add` is used to elevate the changes you chose from your working directory (where you are adding code and deleting code) into the staging area. The staging area is where you put code before you are ready to actually save it by using git commit. When there are a lot of changes that are made it is handy to be able to look at the changes one file at a time and after you are satisfied with the file's changes, you you can add it to the staging area.
+
+</p></details>
 
 ### Git Commit
 
@@ -115,7 +117,9 @@ git add <path(s) to directory or file(s)>
 git commit -m "updates React to version 16.6.1"
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Git Status
 
@@ -133,18 +137,31 @@ git status
 ->        modified:   git-survival-guide.md
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+`git status` shows you the state of your current branch. It will show you changes that are in the working directory, changes that are in the staging area, files that were deleted, what branch you are on, your current relation to the upstream branch, and several other things.
+
+</p></details>
 
 ### Git Diff
 
 #### Usage
 
 ```
-//
-
+// shows the differences in the current working directory against HEAD (normally the last commit)
+git diff
 ```
 
-#### Explanation
+```
+// show the differences in the specified files against HEAD
+git diff <path(s) to directory or file(s)>
+```
+
+<details><summary>Explanation</summary><p>
+
+`git diff` is one of the most helpful commands for ensuring the changes you made were intentional. The output of git diff can take some getting use to to understand. Basically git diff shows you is the difference between the lines that were changed.
+
+</p></details>
 
 ### Git Log
 
@@ -155,7 +172,9 @@ git status
 
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Git Push
 
@@ -166,7 +185,9 @@ git status
 
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Git Pull
 
@@ -177,7 +198,9 @@ git status
 
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Git Checkout
 
@@ -188,7 +211,9 @@ git status
 
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Git Reset
 
@@ -199,7 +224,9 @@ git status
 
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Git Merge
 
@@ -210,7 +237,9 @@ git status
 
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Git Branch
 
@@ -221,7 +250,9 @@ git status
 
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Git Reflog
 
@@ -232,7 +263,9 @@ git status
 
 ```
 
-#### Explanation
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ## Advanced Git Commands
 
