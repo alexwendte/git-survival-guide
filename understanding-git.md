@@ -18,4 +18,16 @@ Because the article is online and in the cloud, you can give read and / or write
 
 ## Next Steps
 
-I hope the analogy of a Word document was helpful to your basic understanding of git. There are very clear differences, but I believe the basic concepts are similar. Continue reading to learn some of the [essential git commands](./git-survival-guide.md/), commands that are more advanced but powerful, and commands that are helpful on a day to day basis.
+I hope the analogy of writing an article was helpful to your basic understanding of git. There are very clear differences, but I believe the basic concepts are similar. You can learn to employ git effectively by reading the [Git Survival Guide](./git-survival-guide.md/) which will equip you with the git commands necessary to succeed in the workplace. If you are interested in the process I took in creating this article you can read [Creating An Article](./creating-an-article.md)
+
+## Works Cited
+
+Patel, Neil. “8 Data-Driven Tips for Using Images in Blog Posts.” HubSpot, Hubspot Inc, 31 Oct. 2014, [https://blog.hubspot.com/marketing/images-in-blog-posts-tips](https://blog.hubspot.com/marketing/images-in-blog-posts-tips)
+
+“Saving Changes.” Atlassian, Atlassian, [https://www.atlassian.com/git/tutorials/saving-changes](https://www.atlassian.com/git/tutorials/saving-changes)
+
+Abel, Ryan. “Four Steps To Maintaining a Clean Git History.” Atomic Object, B Corp, 23 Apr. 2017, [https://spin.atomicobject.com/2017/04/23/maintain-clean-git-history/](https://spin.atomicobject.com/2017/04/23/maintain-clean-git-history/).
+
+“Gitflow Worfklow.” Atlassian, Atlassian, [https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+Dowswell, Kurt. “Git Bash Aliases.” Kurt Dowswell, 07 Sep. 2017, [http://kurtdowswell.com/software-development/git-bash-aliases/](http://kurtdowswell.com/software-development/git-bash-aliases/)
