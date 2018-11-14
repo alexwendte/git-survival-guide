@@ -1,8 +1,8 @@
 # Understanding Git
 
-Before jumping into explaining various git commands, I want to make sure we have a base-level understanding of what git is and how it works on a conceptual scale. I have read multiple guides and tutorials on git and I have found many of them fail to explain git as if someone has never used it before. If you feel comfortable using git, you can skip to the [essential commands](./git-survival-guide.md) section.
+## Introduction
 
-Git is a version control system which enables users to easily and efficiently back up code, keep track of changes to a codebase, and collaborate with other developers. In the following paragraphs I will use an analogy comparing the process of writing an article as a Microsoft Word document to writing code and using git as your version control system.
+Git is unlike any other technology I have ever used. Git is a version control system which enables users to easily and efficiently back up code, keep track of changes to a codebase, and collaborate with other developers. It can be very confusing to learn because of the lack of beginner-friendly resources online that are filled with `git jargon`. In this article I hope to establish a base-level understanding of what git is and how it works. I will do this through applying an analogy comparing writing and saving a text article to writing code and "saving" it through git. If you already feel comfortable using git, feel free to read my [Git Survival Guide](./git-survival-guide.md) that can provide you with tools to improve your git workflow.
 
 ## The Analogy
 

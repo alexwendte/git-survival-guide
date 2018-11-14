@@ -4,7 +4,7 @@
 
 My journey with git has been similar to most people. I started out just using git to store my personal projects on a remote repository through `git add`, `git commit`, and `git push`. When I started my first web development job I was overwhelmed by their git workflow and the added complexity that came with it. I learned more about git in that first week then I learned in a whole year of building my own apps. I started to research the best way to maintain a clean git history and how to use git to its fullest potential. There are several commands I have found myself using very frequently that have made my git workflow much smoother. I figured I would share with git newcomers a collection of the commands I use every day in order to help facilitate their git productivity at work.I hope this will also be an excellent resource for git veterans when they forget syntax or want to explore different ways of accomplishing the same task.
 
-If you are new to git I recommend reading my recent post [Understanding Git](./understanding-git) before reading the commands below as it will help give context for why we need to use the commands.
+If you are new to git I recommend reading my recent post [Understanding Git](./understanding-git.md) before reading the commands below as it will help give context for why we need to use the commands.
 
 ## Table of Contents
 
@@ -180,11 +180,13 @@ Usage
 Usage
 
 ```
-//
-
+// clones the repository into your current directory
+git clone <your-remote-repository>
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git clone` is used to take a remote git repository, which can be online or simply in a different directory, and make it a local repository that you can interact with like any other repository. The remote repository remains unchanged.
 
 </p></details>
 
