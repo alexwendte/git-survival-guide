@@ -74,6 +74,9 @@ git commit -m "updates React to version 16.6.1"
 ```
 
 <details><summary>Explanation</summary><p>
+`git commit` is used to take the changes in the saving area and save them so that you can come back to the changes at a later time. This enables you to easily see the line-by-line differences between various commits and branches.
+
+**NOTE** Commits are essential to a clean and easy to understand git repository. It is extremely important that you provide clear commit messages detailing the changes you made. If one of your coworkers looks at your commit messages they should be able to see how each commit affected the codebase. You don't need to go into specific code changes, they can look at the `git diff` for that, but the message should be a clear summary about the work you did.
 
 </p></details>
 
