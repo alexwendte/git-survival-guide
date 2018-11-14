@@ -78,9 +78,13 @@ Git is a version control system which enables users to easily and efficiently ke
 
 Think of a Microsoft Word document. Say you start typing and make some great progress on an article. After such great work you will certainly want to save it so that if Windows decides to mysteriously shut down you won't have to redo all the progress you made. How do you save the file? For the sake of our example, let us say that you want to keep a record of all the previous times you have saved the article. In that case, you would go to file -> save as -> and then give the article a meaningful title to help you know how this particular save contributed to the article. This way, if you realize a few saves down the road that you liked your old introduction better, you can just copy it from an earlier save and past it into the new one.
 
-The same exact things happens with git. When you decide you have written enough code that you would like to mark your progress, you are able to "save" your changes and provide a helpful message denoting what changes you made. The way you save your changes is through [git add](#git-add) and [git commit](#git-commit). You can view previous saves through [git log](#git-log) and you can view the changes that were made in the saves through [git diff](#git-diff). Just like learning any other utility, it will take some time to be familiar with the process of git, but I guarantee you, once you understand, your mind will be blown with how powerful a tool it is and how much headache it can save you. Let's go back to the example to explore another few git features.
+The same exact things happens with git. When you decide you have written enough code that you would like to mark your progress, you are able to "save" your changes and provide a helpful message denoting what changes you made. The way you save your changes (or in git language `commit` your changes) is through [git add](#git-add) and [git commit](#git-commit) which are explored in the essential git commands section. You can view previous commits through [git log](#git-log) and you can view the changes that were made in the commits through [git diff](#git-diff). Just like learning any other utility, it will take some time to be familiar with the process of git, but I guarantee you, once you understand, your mind will be blown with how powerful a tool it is and how much headache it can save you. Let's go back to the example to explore another few git features.
 
-After several sessions of inspiration you decide you are done working for the day. After such a productive day, you decide you want to keep your article safe in case your hard goes out on you in the middle of the night. How do you do that? You decide to upload your article to DropBox to keep it safe in the cloud. This also has the added benefit that other people whom you give access to your article can download their own version of the article, and make changes to it. If you give them enough permission, they can even make changes to the article that is in DropBox. They cannot, however, change the article that is on your computer.
+After several sessions of inspiration you decide you are done working for the day. After such a productive day, you decide you want to keep your article safe in case your hard goes out on you in the middle of the night. How do you do that? You decide to upload your article to DropBox to keep it safe in the cloud. This also has the added benefit that other people whom you give access to your article can download their own version of the article, and make changes to it. If you give them enough permission, they can even make changes to the article that is in DropBox. They cannot, however, change the article that is on your computer unless you download the article they uploaded and apply the changes yourself.
+
+Again, you can do the same thing with git. After a day of working on some code (or really whenever you want) you can take the commits (saves) that exist locally on your computer and you can push them up to a remote server that will store them for you. Just like with DropBox, other people can access your code if you give them permission. This can be accomplished through using [git push](#git-push). This is where the popular [GitHub](https://github.com) comes into play. GitHub is like DropBox in our example for our collection of git commits.
+
+I hope the analogy of a Word document was helpful to your basic understanding of git. There are very clear differences, but I believe the basic concepts are similar. Continue reading to learn some of the essential git commands, commands that are more advanced but powerful, and commands that are helpful on a day to day basis.
 
 ## Essential Git Commands
 
@@ -89,39 +93,146 @@ After several sessions of inspiration you decide you are done working for the da
 #### Usage
 
 ```
-// everything at and below current console directory
+// adds everything at and below current console directory
 git add .
 ```
 
 ```
+// adds a specific directory or path relative to current console directory
 git add <path(s) to directory or file(s)>
 ```
 
 #### Explanation
 
-`git add` is
+`git add` is used to elevate the changes you chose from your working directory (where you are adding code and deleting code) into the staging area. The staging area is where you put code before you are ready to actually save it by using git commit. When there are a lot of changes that are made it is handy to be able to look at the changes one file at a time and after you are satisfied with the file's changes, you you can add it to the staging area.
 
 ### Git Commit
 
+#### Usage
+
+```
+// saves the changes in the staging area into a commit with a message
+git commit -m "updates React to version 16.6.1"
+```
+
+#### Explanation
+
 ### Git Status
+
+#### Usage
+
+```
+git status
+// output ↓
+-> On branch master
+-> Your branch is up to date with 'origin/master'.
+->
+-> Changes to be committed:
+->  (use "git reset HEAD <file>..." to unstage)
+->
+->        modified:   git-survival-guide.md
+```
+
+#### Explanation
 
 ### Git Diff
 
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
+
 ### Git Log
+
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
 
 ### Git Push
 
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
+
 ### Git Pull
+
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
 
 ### Git Checkout
 
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
+
 ### Git Reset
+
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
 
 ### Git Merge
 
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
+
 ### Git Branch
 
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
+
 ### Git Reflog
+
+#### Usage
+
+```
+//
+
+```
+
+#### Explanation
 
 ## Advanced Git Commands
 
