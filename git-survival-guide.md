@@ -32,6 +32,7 @@
 		- [Tags](#tags)
 	- [Utility Git Commands](#utility-git-commands)
 		- [Comparing Commits (..)](#comparing-commits-)
+		- [Diffing Branches](#diffing-branches)
 		- [Checking Out A Commit](#checking-out-a-commit)
 		- [Name Only Diff](#name-only-diff)
 		- [Remove Cached Git Files](#remove-cached-git-files)
@@ -90,7 +91,7 @@ I hope the analogy of a Word document was helpful to your basic understanding of
 
 ### Git Add
 
-#### Usage
+Usage
 
 ```
 // adds everything at and below current console directory
@@ -110,7 +111,7 @@ git add <path(s) to directory or file(s)>
 
 ### Git Commit
 
-#### Usage
+Usage
 
 ```
 // saves the changes in the staging area into a commit with a message
@@ -123,7 +124,7 @@ git commit -m "updates React to version 16.6.1"
 
 ### Git Status
 
-#### Usage
+Usage
 
 ```
 git status
@@ -145,7 +146,7 @@ git status
 
 ### Git Diff
 
-#### Usage
+Usage
 
 ```
 // shows the differences in the current working directory against HEAD (normally the last commit)
@@ -161,24 +162,41 @@ git diff <path(s) to directory or file(s)>
 
 `git diff` is one of the most helpful commands for ensuring the changes you made were intentional. The output of git diff can take some getting use to to understand. Basically git diff shows you is the difference between the lines that were changed. You will see "+" next to lines that were added relative to HEAD and "-" next to lines that were deleted relative to HEAD.
 
+view [Diffing Branches](#diffing-branches) for viewing the differences between git branches.
+
 </p></details>
 
 ### Git Log
 
-#### Usage
+Usage
 
 ```
-//
-
+git log
+// output ↓
+-> commit 1ee872ab45d5eb69fd668720d2435f8da38881b3 (HEAD -> master, origin/master)
+-> Author: Alex <alex@wendtedesigns.com>
+-> Date:   Tue Nov 13 20:51:57 2018 -0600
+->
+->     adds git diff
+->
+-> commit 2adc818d3c076bfaa5837d5fc03eefe19921bf52
+-> Author: Alex <alex@wendtedesigns.com>
+-> Date:   Tue Nov 13 20:40:04 2018 -0600
+->
+->     adds expand to each explanation section
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git log` shows you your commit history. **TIP** Make sure you press "q" to get out of `git log` and not "ctrl + c". "ctrl + c" will sometimes mess up your terminal.
+
+Look at [Comparing Commits (..)](#comparing-commits-) for an even more useful feature of `git log`.
 
 </p></details>
 
 ### Git Push
 
-#### Usage
+Usage
 
 ```
 //
@@ -191,7 +209,7 @@ git diff <path(s) to directory or file(s)>
 
 ### Git Pull
 
-#### Usage
+Usage
 
 ```
 //
@@ -204,7 +222,7 @@ git diff <path(s) to directory or file(s)>
 
 ### Git Checkout
 
-#### Usage
+Usage
 
 ```
 //
@@ -217,7 +235,7 @@ git diff <path(s) to directory or file(s)>
 
 ### Git Reset
 
-#### Usage
+Usage
 
 ```
 //
@@ -230,7 +248,7 @@ git diff <path(s) to directory or file(s)>
 
 ### Git Merge
 
-#### Usage
+Usage
 
 ```
 //
@@ -243,7 +261,7 @@ git diff <path(s) to directory or file(s)>
 
 ### Git Branch
 
-#### Usage
+Usage
 
 ```
 //
@@ -256,7 +274,7 @@ git diff <path(s) to directory or file(s)>
 
 ### Git Reflog
 
-#### Usage
+Usage
 
 ```
 //
@@ -271,6 +289,19 @@ git diff <path(s) to directory or file(s)>
 
 ### Git Rebase
 
+Usage
+
+```
+//
+
+```
+
+<details><summary>Explanation</summary><p>
+
+view [yo](https://hi) for further reading.
+
+</p></details>
+
 ### File Specific "Merge"
 
 ### Amend a Commit
@@ -280,6 +311,8 @@ git diff <path(s) to directory or file(s)>
 ## Utility Git Commands
 
 ### Comparing Commits (..)
+
+### Diffing Branches
 
 ### Checking Out A Commit
 
