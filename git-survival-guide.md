@@ -20,6 +20,7 @@
 		- [Git Log](#git-log)
 		- [Git Push](#git-push)
 		- [Git Pull](#git-pull)
+		- [Git Clone](#git-clone)
 		- [Git Checkout](#git-checkout)
 		- [Git Reset](#git-reset)
 		- [Git Merge](#git-merge)
@@ -73,19 +74,21 @@ Missing research includes data about how effective the different git workflows a
 
 ## Understanding Git
 
-Before jumping into explaining various git commands I want to make sure we have a base-level understanding of what git is and how it works on a conceptual scale. I have read multiple guides and tutorials on git and I have found many of them fail to explain git as if someone has never used it before. If you feel comfortable using git, you can skip to the [essential commands](#essential-git-commands).
+Before jumping into explaining various git commands, I want to make sure we have a base-level understanding of what git is and how it works on a conceptual scale. I have read multiple guides and tutorials on git and I have found many of them fail to explain git as if someone has never used it before. If you feel comfortable using git, you can skip to the [essential commands](#essential-git-commands) section.
 
-Git is a version control system which enables users to easily and efficiently keep track of changes to a codebase, collaborate with other developers, and backup code. I will use an analogy to help explain git.
+Git is a version control system which enables users to easily and efficiently back up code, keep track of changes to a codebase, and collaborate with other developers. In the following paragraphs I will use an analogy comparing the process of writing an article as a Microsoft Word document to writing code and using git as your version control system.
 
-Think of a Microsoft Word document. Say you start typing and make some great progress on an article. After such great work you will certainly want to save it so that if Windows decides to mysteriously shut down you won't have to redo all the progress you made. How do you save the file? For the sake of our example, let us say that you want to keep a record of all the previous times you have saved the article. In that case, you would go to file -> save as -> and then give the article a meaningful title to help you know how this particular save contributed to the article. This way, if you realize a few saves down the road that you liked your old introduction better, you can just copy it from an earlier save and past it into the new one.
+Imagine that you start typing and make great progress on writing an article. Afterwards, you will certainly want to save the document so that if Windows decides to mysteriously shut down you won't have to redo all the progress you made. How do you save the file? For the sake of our example, let us say that you want to keep a record of all the previous times you have saved the article. In that case, you would go to file → save as → and then give the article a meaningful title to help you know how this particular save contributed to the article. By giving the documents different names, you will have the ability to go back to previous edits later. For example, if you realize a few saves down the road that you liked your old introduction better, you can just copy it from an earlier save and paste it into the new one.
 
-The same exact things happens with git. When you decide you have written enough code that you would like to mark your progress, you are able to "save" your changes and provide a helpful message denoting what changes you made. The way you save your changes (or in git language `commit` your changes) is through [git add](#git-add) and [git commit](#git-commit) which are explored in the essential git commands section. You can view previous commits through [git log](#git-log) and you can view the changes that were made in the commits through [git diff](#git-diff). Just like learning any other utility, it will take some time to be familiar with the process of git, but I guarantee you, once you understand, your mind will be blown with how powerful a tool it is and how much headache it can save you. Let's go back to the example to explore another few git features.
+Git has the same functionality, it just works a little differently. After writing enough code, you will probably want to “save” your progress. With git, you can save your changes and provide a helpful message denoting which changes you made. The way you save your changes (or in git language `commit` your changes) is through [git add](#git-add) and [git commit](#git-commit), which are explained in the essential git commands section. You can view previous commits through [git log](#git-log) and you can view the changes that were made in the commits through [git diff](#git-diff). Just like learning any other utility, it may take some time to become familiar with the process of git. I guarantee you that once you understand, you will be amazed at how powerful of a tool it is. Let's get back to the analogy to explore 2 more git features.
 
-After several sessions of inspiration you decide you are done working for the day. After such a productive day, you decide you want to keep your article safe in case your hard goes out on you in the middle of the night. How do you do that? You decide to upload your article to DropBox to keep it safe in the cloud. This also has the added benefit that other people whom you give access to your article can download their own version of the article, and make changes to it. If you give them enough permission, they can even make changes to the article that is in DropBox. They cannot, however, change the article that is on your computer unless you download the article they uploaded and apply the changes yourself.
+After editing and saving the article several times, you decide you are done working for the day. After a productive day of writing you decide you want to keep your article safe throughout the night, in case your hard drive were to go out. But the big question is, how do you do that? You decide to upload your article to Google Drive to keep it safe in the cloud. If you ever need access to the article, from a different computer or if you accidentally delete it from yours you can simply download it from Google Drive.
 
-Again, you can do the same thing with git. After a day of working on some code (or really whenever you want) you can take the commits (saves) that exist locally on your computer and you can push them up to a remote server that will store them for you. Just like with DropBox, other people can access your code if you give them permission. This can be accomplished through using [git push](#git-push). This is where the popular [GitHub](https://github.com) comes into play. GitHub is like DropBox in our example for our collection of git commits.
+Again, you can do the same thing with git. After a day of working on some code (or really whenever you want) you can take the commits (saves) that exist locally on your computer and you can push them up to a remote server that will store them for you. This can be accomplished through using [git push](#git-push). You can also "download" the code to your computer by using [git pull](#git-pull) or [git clone](#git-clone) depending on what is on your local machine. This is where the popular [GitHub](https://github.com) comes into play. GitHub is like Google Drive in our example for our collection of git commits. Now we get to discuss one of the most exciting functionalities that git makes extremely easy: collaboration.
 
-I hope the analogy of a Word document was helpful to your basic understanding of git. There are very clear differences, but I believe the basic concepts are similar. Continue reading to learn some of the essential git commands, commands that are more advanced but powerful, and commands that are helpful on a day to day basis.
+Because the article is online and in the cloud, you can give read and / or write permission to the online version of the article to other people. If someone has read permissions, They could download their own version of the article, and make changes to it. They cannot, however, replace or delete the article that is on Google Drive because they only have read permissions. If they have write permissions, they can download their own version of the article, and then change out the article on Google Drive with their own article. They cannot, however, change the article that is on your computer, they can only change the article on Google Drive.
+
+I hope the analogy of a Word document was helpful to your basic understanding of git. There are very clear differences, but I believe the basic concepts are similar. Continue reading to learn some of the [essential git commands](#essential-git-commands), commands that are more advanced but powerful, and commands that are helpful on a day to day basis.
 
 ## Essential Git Commands
 
@@ -129,13 +132,13 @@ Usage
 ```
 git status
 // output ↓
--> On branch master
--> Your branch is up to date with 'origin/master'.
-->
--> Changes to be committed:
-->  (use "git reset HEAD <file>..." to unstage)
-->
-->        modified:   git-survival-guide.md
+→ On branch master
+→ Your branch is up to date with 'origin/master'.
+→
+→ Changes to be committed:
+→  (use "git reset HEAD <file>..." to unstage)
+→
+→        modified:   git-survival-guide.md
 ```
 
 <details><summary>Explanation</summary><p>
@@ -173,17 +176,17 @@ Usage
 ```
 git log
 // output ↓
--> commit 1ee872ab45d5eb69fd668720d2435f8da38881b3 (HEAD -> master, origin/master)
--> Author: Alex <alex@wendtedesigns.com>
--> Date:   Tue Nov 13 20:51:57 2018 -0600
-->
-->     adds git diff
-->
--> commit 2adc818d3c076bfaa5837d5fc03eefe19921bf52
--> Author: Alex <alex@wendtedesigns.com>
--> Date:   Tue Nov 13 20:40:04 2018 -0600
-->
-->     adds expand to each explanation section
+→ commit 1ee872ab45d5eb69fd668720d2435f8da38881b3 (HEAD → master, origin/master)
+→ Author: Alex <alex@wendtedesigns.com>
+→ Date:   Tue Nov 13 20:51:57 2018 -0600
+→
+→     adds git diff
+→
+→ commit 2adc818d3c076bfaa5837d5fc03eefe19921bf52
+→ Author: Alex <alex@wendtedesigns.com>
+→ Date:   Tue Nov 13 20:40:04 2018 -0600
+→
+→     adds expand to each explanation section
 ```
 
 <details><summary>Explanation</summary><p>
@@ -208,6 +211,19 @@ Usage
 </p></details>
 
 ### Git Pull
+
+Usage
+
+```
+//
+
+```
+
+<details><summary>Explanation</summary><p>
+
+</p></details>
+
+### Git Clone
 
 Usage
 
