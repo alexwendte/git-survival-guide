@@ -2,7 +2,7 @@
 
 ## Introduction
 
-My journey with git has been similar to most people. I started out just using git to store my personal projects on a remote repository through `git add`, `git commit`, and `git push`. When I started my first web development job I was overwhelmed by their git workflow and the added complexity that came with it. I learned more about git in that first week then I learned in a whole year of building my own apps. I started to research the best way to maintain a clean git history and how to use git to its fullest potential. There are several commands I have found myself using very frequently that have made my git workflow much smoother. I figured I would share with git newcomers a collection of the commands I use every day in order to help facilitate their git productivity at work.I hope this will also be an excellent resource for git veterans when they forget syntax or want to explore different ways of accomplishing the same task.
+Don't get git? I didn't either. My journey with git has been similar to most people. I started out just using git to store my personal projects on a remote repository through `git add`, `git commit`, and `git push`. When I started my first web development job I was overwhelmed by their git workflow and the added complexity that came with it. I learned more about git in that first week then I learned in a whole year of building my own apps. I started to research the best way to maintain a clean git history and how to use git to its fullest potential. There are several commands I have found myself using very frequently that have made my git workflow much smoother. I figured I would share with git newcomers a collection of the commands I use every day in order to help facilitate their git productivity at work.I hope this will also be an excellent resource for git veterans when they forget syntax or want to explore different ways of accomplishing the same task.
 
 If you are new to git I recommend reading my recent post [Understanding Git](./understanding-git.md) before reading the commands below as it will help give context for why we need to use the commands.
 
@@ -74,6 +74,7 @@ git commit -m "updates React to version 16.6.1"
 ```
 
 <details><summary>Explanation</summary><p>
+
 `git commit` is used to take the changes in the saving area and save them so that you can come back to the changes at a later time. This enables you to easily see the line-by-line differences between various commits and branches.
 
 **NOTE** Commits are essential to a clean and easy to understand git repository. It is extremely important that you provide clear commit messages detailing the changes you made. If one of your coworkers looks at your commit messages they should be able to see how each commit affected the codebase. You don't need to go into specific code changes, they can look at the `git diff` for that, but the message should be a clear summary about the work you did.
@@ -148,7 +149,7 @@ git log
 
 `git log` shows you your commit history. **TIP** Make sure you press "q" to get out of `git log` and not "ctrl + c". "ctrl + c" will sometimes mess up your terminal.
 
-Look at [Comparing Commits (..)](#comparing-commits-) for an even more useful feature of `git log`.
+Look at [Comparing Commits (..)](#comparing-commits) for an even more useful feature of `git log`.
 
 </p></details>
 
@@ -157,11 +158,15 @@ Look at [Comparing Commits (..)](#comparing-commits-) for an even more useful fe
 Usage
 
 ```
-//
-
+// pushes your local commits to the upstream branch (normally origin master)
+git push
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git push` will take the changes up to your current HEAD and push them to the branch you have set as your upstream branch. This is commonly a remote branch hosted on GitHub
+
+The upstream branch is set by using `git push --set-upstream <remote-repository-url> <branch-name>`
 
 </p></details>
 
@@ -170,11 +175,16 @@ Usage
 Usage
 
 ```
-//
-
+// pull down the commit history from the upstream branch
+git pull
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git pull` will take the changes from the upstream branch and create a new commit on your local branch applying those changes.
+
+**NOTE**
+You can use `git pull --rebase` to attempt to `rebase` the remote changes onto your current branch and **NOT** produce a new git commit. This is what I usually do to maintain a cleaner git history
 
 </p></details>
 
@@ -186,6 +196,8 @@ Usage
 // clones the repository into your current directory
 git clone <your-remote-repository>
 ```
+
+-
 
 <details><summary>Explanation</summary><p>
 
@@ -216,6 +228,8 @@ Usage
 ```
 
 <details><summary>Explanation</summary><p>
+
+view [Git Reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) by Atlassian for a full explanation of `git reset`.
 
 </p></details>
 
@@ -271,7 +285,7 @@ Usage
 
 <details><summary>Explanation</summary><p>
 
-view [yo](https://hi) for further reading.
+view [Git Rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) by Atlassian for a full explanation of `git rebase`.
 
 </p></details>
 
@@ -297,7 +311,14 @@ view [yo](https://hi) for further reading.
 
 ### Git Aliases
 
+Git commands are not very long, but you type them so much that it would be nice to only type 2 letters instead of git pull --rebase.
+Git Aliases integrated Bash aliases allow you to do just that. You can easily set up custom aliases to increase your productivity.
+
+View [Git Bash Aliases](http://kurtdowswell.com/software-development/git-bash-aliases/) by Kurt Dowswell for an explanation of how to set up git aliases.
+
 ### Git Flow Workflow
+
+It is essential for organizations to be on the same page about how to manage your git workflow. This will guide things such as naming conventions, when to create branches, when to merge branches, production versioning,and many other aspects of a git workflow. I recommendation is to conform to whatever workflow your current organization uses. However, if you working on a personal project or have the opportunity to suggest a workflow, [Git Flow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is very intuitive and helps to reduce merge conflicts.
 
 ### Chaining Commands
 

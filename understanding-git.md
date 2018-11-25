@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Git is unlike any other technology I have ever used. Git is a version control system which enables users to easily and efficiently back up code, keep track of changes to a codebase, and collaborate with other developers. It can be very confusing to learn because of the lack of beginner-friendly resources online that are filled with `git jargon`. In this article I hope to establish a base-level understanding of what git is and how it works. I will do this through applying an analogy comparing writing and saving a text article to writing code and "saving" it through git. If you already feel comfortable using git, feel free to read my [Git Survival Guide](./git-survival-guide.md) that can provide you with tools to improve your git workflow.
+Git is the backbone to most hobby and enterprise-grade projects. Git is a version control system which enables users to easily and efficiently back up code, keep track of changes to a codebase, and collaborate with other developers. It can be very confusing to learn because of the lack of beginner-friendly resources online that are filled with `git jargon`. In this article I hope to establish a base-level understanding of what git is and how it works. I will do this through applying an analogy comparing writing and saving a text article to writing code and "saving" it through git. If you already feel comfortable using git, feel free to read my [Git Survival Guide](./git-survival-guide.md) that can provide you with tools to improve your git workflow.
 
 ## The Analogy
 
