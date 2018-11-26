@@ -251,11 +251,15 @@ Usage
 Usage
 
 ```
-//
-
+// creates a new branch off of the currently checkout out branch
+git checkout -b <branch-you-want-to-create>
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git branch` is an essential aspect to a clean git workflow. It enables you to create a copy of the currently checkout out branch and commit and make changes on a new branch that do not affect the branch you checkout out from. Whenever you are satisfied with the changes you have made on the branch, you can checkout the original branch again, and then `git merge <branch-you-created-out>`
+
+[Git Flow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) makes heavy and effective use of git branching. Read the linked article for how to use it effectively.
 
 </p></details>
 
@@ -264,11 +268,22 @@ Usage
 Usage
 
 ```
-//
-
+git reflog
+// output ↓
+b1d13e5 (HEAD -> about-us, origin/about-us) HEAD@{0}: commit: starts about page. decreases boldness of links. creates annualreports for about
+274d1ec (origin/develop, develop) HEAD@{1}: checkout: moving from develop to about-us
+274d1ec (origin/develop, develop) HEAD@{2}: commit: version 0.7.1
+33e51f8 HEAD@{3}: rebase -i (finish): returning to refs/heads/develop
+33e51f8 HEAD@{4}: rebase -i (fixup): improves coverage threshold to 95,75,95,95. implements futher tests in multiple components. refactors and fixes header focus and hover functionality.
+4071888 HEAD@{5}: rebase -i (reword): improves coverage threshold to 95,75,95,95. implements futher tests in multiple components. refactors and fixes header focus and hover functionality.
+95e4d95 HEAD@{6}: rebase -i: fast-forward
+01adb5c HEAD@{7}: rebase -i (start): checkout head~3
+8eae4d5 (origin/coverage-and-header-fix, coverage-and-header-fix) HEAD@{8}: merge coverage-and-header-fix: Fast-forward
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git reflog` shows the exact history of the commands git has used along with head references and commit SHAs. It is an extremely useful command whenever you mess up your branch with git reset, git merge, or git rebase. in order to go back to a specific commit, use `git reflog` to find the reference point, and then `git reset HEAD@{<head-number-to-reset-to>}` and git will take you back to where you were at that reference point.
 
 </p></details>
 
@@ -279,11 +294,54 @@ Usage
 Usage
 
 ```
-//
-
+// open a file showing you the last 3 commits enabling you to chose what to do with them
+git rebase -i HEAD~3
+// partial output ↓
+pick ed12574 moves works cited to correct section
+pick 5a3a0d2 adds git push, pull, and additional tips
+pick 60a40e3 adds merge and headers to understanding git
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git rebase` enables you to completely rewrite your git history. It is best practice to do this on commits that do not currently exist in a remote repository on a branch that other people are relying on (such as already existing commits on the master branch). I commonly use this to explain in 1 commit the work I did on a feature branch no one else is touching before I merge back into master.
+
+When you run `git rebase -i HEAD~3` this is the explanation you will be given:
+
+```
+pick ed12574 moves works cited to correct section
+pick 5a3a0d2 adds git push, pull, and additional tips
+pick 60a40e3 adds merge and headers to understanding git
+
+# Rebase 1ea990e..60a40e3 onto 1ea990e (3 commands)
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+```
+
+the oldest commit is at the top, and the newest is at the bottom. If I wanted to keep commit `ed12574` and turn commits `5a3a0d2` and `60a40e3` into 1 commit I would save the file and then close it as the following
+
+```
+pick ed12574 moves works cited to correct section
+pick 5a3a0d2 adds git push, pull, and additional tips
+squash 60a40e3 adds merge and headers to understanding git
+```
+
+This would keep commit `ed12574` but would take the commit message and changes from commit `60a40e3` and apply them to commit `5a3a0d2` effectively cleaning up our git history.
 
 view [Git Rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) by Atlassian for a full explanation of `git rebase`.
 
