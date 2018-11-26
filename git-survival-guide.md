@@ -6,6 +6,12 @@ Don't get git? I didn't either. My journey with git has been similar to most peo
 
 If you are new to git I recommend reading my recent post [Understanding Git](./understanding-git.md) before reading the commands below as it will help give context for why we need to use the commands.
 
+Before we get started, here is an image that will help to visualize the different stages changes can be in.
+
+![git changes levels](./images/git-levels.png)
+
+The working directly is essentially what you actually see when you open a file. If you make changes to a file, those changes are in the working directly but no where else. In order to get changes to the staging area, you must notify git of those changes by using `git add <path-to-changes>`. Then, in order to include those changes that have been elevated to the staging area, you use `git commit -m "<you-commit-message>"`. Each of these commands will be explained further in their corresponding sections.
+
 ## Table of Contents
 
 - [The Git Survival Guide](#the-git-survival-guide)
@@ -62,6 +68,9 @@ git add <path(s) to directory or file(s)>
 
 `git add` is used to elevate the changes you chose from your working directory (where you are adding code and deleting code) into the staging area. The staging area is where you put code before you are ready to actually save it by using git commit. When there are a lot of changes that are made it is handy to be able to look at the changes one file at a time and after you are satisfied with the file's changes, you you can add it to the staging area.
 
+Remember this image from the introduction, and how `git add` elevates the files you chose in your working directory to be a part of the staging area.
+![git changes levels](./images/git-levels.png)
+
 </p></details>
 
 ### Git Commit
@@ -78,6 +87,9 @@ git commit -m "updates React to version 16.6.1"
 `git commit` is used to take the changes in the saving area and save them so that you can come back to the changes at a later time. This enables you to easily see the line-by-line differences between various commits and branches.
 
 **NOTE** Commits are essential to a clean and easy to understand git repository. It is extremely important that you provide clear commit messages detailing the changes you made. If one of your coworkers looks at your commit messages they should be able to see how each commit affected the codebase. You don't need to go into specific code changes, they can look at the `git diff` for that, but the message should be a clear summary about the work you did.
+
+Remember this image from the introduction, and how `git commit` elevates the files in the staging area to be a part of the repository.
+![git changes levels](./images/git-levels.png)
 
 </p></details>
 
@@ -216,6 +228,9 @@ Usage
 
 <details><summary>Explanation</summary><p>
 
+If we look at this image, `git checkout` can remove changes from the working directory and take you back to a clean slate of the last commit.
+![git changes levels](./images/git-levels.png)
+
 </p></details>
 
 ### Git Reset
@@ -228,6 +243,9 @@ Usage
 ```
 
 <details><summary>Explanation</summary><p>
+
+If we look at this image, `git reset` can remove changes from the staging area and place them back into the working directory level.
+![git changes levels](./images/git-levels.png)
 
 view [Git Reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) by Atlassian for a full explanation of `git reset`.
 
@@ -260,6 +278,12 @@ git checkout -b <branch-you-want-to-create>
 `git branch` is an essential aspect to a clean git workflow. It enables you to create a copy of the currently checkout out branch and commit and make changes on a new branch that do not affect the branch you checkout out from. Whenever you are satisfied with the changes you have made on the branch, you can checkout the original branch again, and then `git merge <branch-you-created-out>`
 
 [Git Flow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) makes heavy and effective use of git branching. Read the linked article for how to use it effectively.
+
+It is easy to get out of control with git branches. Using a git workflow will help to eliminate situations like this ![Too many git branches](./images/git-history-dirty.png)
+
+As you can see, there are way too many git branches (and there are at least 15 more), and many of them are months or years out of date. This makes managing a project much more difficult. It is a better idea to have a git repository looking like this ![Good amount of git branches](./images/git-history-clean.png)
+
+This looks better because there are not as many branches, they are more in-sync with the master branch. This conversion from the first image to the second happened through deleting branches after they were merged into master because they were no longer needed. This can be done locally by using `git branch -d <branch-name>` or remotely by using `git push origin :<branch-name>`
 
 </p></details>
 
