@@ -30,19 +30,17 @@ The working directly is essentially what you actually see when you open a file. 
 		- [Git Reset](#git-reset)
 		- [Git Merge](#git-merge)
 		- [Git Branch](#git-branch)
+		- [Git Stash](#git-stash)
 		- [Git Reflog](#git-reflog)
 	- [Advanced Git Commands](#advanced-git-commands)
 		- [Git Rebase](#git-rebase)
 		- [File Specific "Merge"](#file-specific-merge)
 		- [Amend a Commit](#amend-a-commit)
 		- [Comparing Commits (..)](#comparing-commits-)
-		- [Diffing Branches](#diffing-branches)
-		- [Name Only Diff](#name-only-diff)
 		- [Remove Cached Git Files](#remove-cached-git-files)
 	- [Bonus Tips](#bonus-tips)
 		- [Git Aliases](#git-aliases)
 		- [Git Flow Workflow](#git-flow-workflow)
-		- [Chaining Commands](#chaining-commands)
 	- [References](#references)
 
 ## Essential Git Commands
@@ -230,7 +228,7 @@ git checkout <branch-name>
 
 <details><summary>Explanation</summary><p>
 
-`git checkout` has many different use cases. One common one is to reset any changes you have made since the last commit. I use it to clear out the changes I made on files I didn't mean to touch before committing.
+`git checkout` has many different use cases. One common one is to reset any changes you have made since the last commit. I use it to clear out the changes I made on files I didn't mean to touch before committing. In order to remove files that were newly added to the working directory you need to use `git clean -fd` to remove them.
 
 A second use case if for checkout out to different branches. You can create a new branch using `git checkout -b <new-branch-name>` or checkout an existing branch using `git checkout <existing-branch-name>`
 
@@ -311,6 +309,30 @@ It is easy to get out of control with git branches. Using a git workflow will he
 As you can see, there are way too many git branches (and there are at least 15 more), and many of them are months or years out of date. This makes managing a project much more difficult. It is a better idea to have a git repository looking like this ![Good amount of git branches](./images/git-history-clean.png)
 
 This looks better because there are not as many branches, they are more in-sync with the master branch. This conversion from the first image to the second happened through deleting branches after they were merged into master because they were no longer needed. This can be done locally by using `git branch -d <branch-name>` or remotely by using `git push origin :<branch-name>`
+
+</p></details>
+
+### Git Stash
+
+Usage
+
+```
+// save the current working director in to the git stash
+git stash
+```
+
+```
+// apply the stashed changes to the current working directory
+git stash apply
+```
+
+<details><summary>Explanation</summary><p>
+
+`git stash` is used to save the changes in your current working directory to use later if you need a clean working directory before running a different git command.
+
+You can get a list of stashes by using `git stash list`
+
+You can choose which stash you want to apply by using `git stash apply stash@{<number>}`
 
 </p></details>
 
@@ -440,30 +462,21 @@ If you need to amend a commit that is in a remote repository, you can use `git c
 Usage
 
 ```
-//
-git reflog
+// git the log difference only between master and head
+git log master..head
 ```
 
-<details><summary>Explanation</summary><p>
-
-</p></details>
-
-### Diffing Branches
-
-Usage
-
 ```
-//
-git reflog
+// get the diff only between master and head
+git diff master..head
 ```
-
-<details><summary>Explanation</summary><p>
-
-</p></details>
-
-### Name Only Diff
 
 ### Remove Cached Git Files
+
+```
+// removes all files from git cache. Useful if you add a file to git ignore after git is already tracking it.
+git rm --cached .
+```
 
 ## Bonus Tips
 
@@ -477,8 +490,6 @@ View [Git Bash Aliases](http://kurtdowswell.com/software-development/git-bash-al
 ### Git Flow Workflow
 
 It is essential for organizations to be on the same page about how to manage your git workflow. This will guide things such as naming conventions, when to create branches, when to merge branches, production versioning,and many other aspects of a git workflow. I recommendation is to conform to whatever workflow your current organization uses. However, if you working on a personal project or have the opportunity to suggest a workflow, [Git Flow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is very intuitive and helps to reduce merge conflicts.
-
-### Chaining Commands
 
 ## References
 
