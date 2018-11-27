@@ -403,11 +403,13 @@ view [Git Rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-
 Usage
 
 ```
-//
-git reflog
+// include specified files from specified in your current working and staging directories.
+git checkout <branch-to-pick-from> <path-to-file(s)>
 ```
 
 <details><summary>Explanation</summary><p>
+
+I learned this from [this blog post](https://jasonrudolph.com/blog/2009/02/25/git-tip-how-to-merge-specific-files-from-another-branch/) and it has saved me in several nasty situations because my work has several extremely out of date branches, and I only need to pick certain files to include in a feature branch.
 
 </p></details>
 
@@ -416,11 +418,20 @@ git reflog
 Usage
 
 ```
-//
-git reflog
+// make a change to the previous commit based on your current staging directory with a commit message.
+git commit --amend -m <your-new-commit-message>
+```
+
+```
+// make a change to the previous commit based on your current staging directory without changing the commit message.
+git commit --amend --no-edit
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git commit --amend` helps you when you want to make a change to the previous commit without creating a new commit. Do not use this on a commit that has already been pushed to a remote repository because it rewrites history, and people might be relying on that history.
+
+If you need to amend a commit that is in a remote repository, you can use `git commit --amend` and the force push the changes to the remote repository using `git push --force`
 
 </p></details>
 
