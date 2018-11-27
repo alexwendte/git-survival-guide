@@ -35,11 +35,8 @@ The working directly is essentially what you actually see when you open a file. 
 		- [Git Rebase](#git-rebase)
 		- [File Specific "Merge"](#file-specific-merge)
 		- [Amend a Commit](#amend-a-commit)
-		- [Tags](#tags)
-	- [Utility Git Commands](#utility-git-commands)
 		- [Comparing Commits (..)](#comparing-commits-)
 		- [Diffing Branches](#diffing-branches)
-		- [Checking Out A Commit](#checking-out-a-commit)
 		- [Name Only Diff](#name-only-diff)
 		- [Remove Cached Git Files](#remove-cached-git-files)
 	- [Bonus Tips](#bonus-tips)
@@ -222,13 +219,24 @@ git clone <your-remote-repository>
 Usage
 
 ```
-//
+// will reset changes from the working directory back to the current commit's status
+git checkout <path-to-files>
+```
 
+```
+// change HEAD (and the working directory) to the specified branch
+git checkout <branch-name>
 ```
 
 <details><summary>Explanation</summary><p>
 
-If we look at this image, `git checkout` can remove changes from the working directory and take you back to a clean slate of the last commit.
+`git checkout` has many different use cases. One common one is to reset any changes you have made since the last commit. I use it to clear out the changes I made on files I didn't mean to touch before committing.
+
+A second use case if for checkout out to different branches. You can create a new branch using `git checkout -b <new-branch-name>` or checkout an existing branch using `git checkout <existing-branch-name>`
+
+If you are curious of the state of the codebase at a certain commit, you can directly checkout that commit using `git checkout <git-commit-hash>`. This leaves you in a "detached head" state where your working directory is set to the checkout out commit's files, and any changes or commits you make will not be saved.
+
+If we look at this image, `git checkout` can remove changes from the working directory and take you back to a clean slate of the last commit, essentially bumping you up one level in the image.
 ![git changes levels](./images/git-levels.png)
 
 </p></details>
@@ -238,11 +246,22 @@ If we look at this image, `git checkout` can remove changes from the working dir
 Usage
 
 ```
-//
+// will move any staged files in the specified path(s) back to the working directory
+git reset <path-to-files-to-reset>
+```
 
+```
+// will move head back 3 commits, but will keep the working directory intact
+git reset head~3
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git reset` is an extremely useful, but a potentially dangerous command. Atlassian says, "Care must be taken when using this tool, as it’s one of the only Git commands that have the potential to lose your work." We will explore that in a second, but for now what you need to know is that git reset has 2 main functionalities.
+
+It can be used to take changes that have been elevated to the staging area and bumping them back down to the working directory.
+
+`git reset` is also used to affect commit history, and this is where it can become dangerous. A common situation I use git reset is when I have really messed up a rebase or a merge. When this happens, I use [git reflog](#git-reflog) to see the reference to the commit before I messed thing up, then run `git reset HEAD@{<number>}` in order to get my commit history back in line. After this, I will run `git checkout .` in order to clear my working directory of leftover changes from the messed up merge.
 
 If we look at this image, `git reset` can remove changes from the staging area and place them back into the working directory level.
 ![git changes levels](./images/git-levels.png)
@@ -256,11 +275,19 @@ view [Git Reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-res
 Usage
 
 ```
-//
-
+//  take the changes from the branch you want to include and attempt to bring them into the currently checkout out branch
+git merge <branch-name>
 ```
 
 <details><summary>Explanation</summary><p>
+
+`git merge` allows you to take the changes from a branch and bring them into your currently checkout out branch. This is where git can become confusing for many people as "merge conflicts" arise. A merge conflict happens when your currently checked out branch has made a change on the same line of code that the branch you are merging in has made. Read [Git Merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge) for an awesome in detail explanation of why merge conflicts happen.
+
+In general, it is best practice to try to avoid merge conflicts. Using an effective git workflow can help with this, as well as making sure you keep any branches up to date with the master branch. One of my least favorite tasks at work is sorting through a whole terminal of files filled with merge conflicts.
+
+On a side note, using style tools such as prettier and linting tools such as eslint can helps significantly reduce merge conflicts that occur because of simple changes in formatting.
+
+`git merge -X theirs` uses "their" (the branch you are merging in) changes if there are merge conflicts whenever possible.
 
 </p></details>
 
@@ -307,7 +334,7 @@ b1d13e5 (HEAD -> about-us, origin/about-us) HEAD@{0}: commit: starts about page.
 
 <details><summary>Explanation</summary><p>
 
-`git reflog` shows the exact history of the commands git has used along with head references and commit SHAs. It is an extremely useful command whenever you mess up your branch with git reset, git merge, or git rebase. in order to go back to a specific commit, use `git reflog` to find the reference point, and then `git reset HEAD@{<head-number-to-reset-to>}` and git will take you back to where you were at that reference point.
+`git reflog` shows the exact history of the commands git has used along with head references and commit hashes. It is an extremely useful command whenever you mess up your branch with git reset, git merge, or git rebase. in order to go back to a specific commit, use `git reflog` to find the reference point, and then `git reset HEAD@{<head-number-to-reset-to>}` and git will take you back to where you were at that reference point.
 
 </p></details>
 
@@ -373,17 +400,55 @@ view [Git Rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-
 
 ### File Specific "Merge"
 
+Usage
+
+```
+//
+git reflog
+```
+
+<details><summary>Explanation</summary><p>
+
+</p></details>
+
 ### Amend a Commit
 
-### Tags
+Usage
 
-## Utility Git Commands
+```
+//
+git reflog
+```
+
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Comparing Commits (..)
 
+Usage
+
+```
+//
+git reflog
+```
+
+<details><summary>Explanation</summary><p>
+
+</p></details>
+
 ### Diffing Branches
 
-### Checking Out A Commit
+Usage
+
+```
+//
+git reflog
+```
+
+<details><summary>Explanation</summary><p>
+
+</p></details>
 
 ### Name Only Diff
 
@@ -405,3 +470,5 @@ It is essential for organizations to be on the same page about how to manage you
 ### Chaining Commands
 
 ## References
+
+git levels image: image from imgur.com
