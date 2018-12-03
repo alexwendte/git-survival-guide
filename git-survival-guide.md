@@ -294,7 +294,7 @@ On a side note, using style tools such as prettier and linting tools such as esl
 Usage
 
 ```
-// creates a new branch off of the currently checkout out branch
+// creates a new branch off of the currently checkouted out branch
 git checkout -b <branch-you-want-to-create>
 ```
 
